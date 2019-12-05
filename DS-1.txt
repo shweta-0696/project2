@@ -1,0 +1,55 @@
+sudo -i
+
+gedit /etc/hostname
+gedit /etc/hosts
+ip_address manager
+ip_address worker1
+ip_address worker2
+
+#ping manager
+ping ip_add_manager
+
+sudo apt-get update
+apt-get install docker.io
+systemctl start docker
+systemctl enable docker
+
+# usermod -aG docker manager
+# usermod -aG docker worker1
+# usermod -aG docker worker2
+
+# su - manager
+$ docker run hello-world
+
+$ docker swarm init --advertise-addr 192.168.1.103(master_ip,on master only)
+
+***Run this on worker****
+docker swarm join --token SWMTKN-1-4htf3vnzmbhc88vxjyguipo91ihmutrxi2p1si2de4whaqylr6-3oed1hnttwkalur1ey7zkdp9l 192.168.1.103:2377
+
+docker node ls
+
+If at any time, you lost your join token, it can be retrieved by running the following command on the manager node for the manager token:
+
+$ docker swarm join-token manager -q
+The same way to retrieve the worker token run the following command on the manager node:
+
+$ docker swarm join-token worker -q
+
+docker service create --name my-web1 --publish 8081:80 --replicas 2 nginx
+
+$ docker service ls
+docker service ps my-web1
+$ curl http://dockermanager:8081
+
+$ docker service scale my-web1=3
+
+docker service ls
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+apt-get update
+apt-get install git
+git --version
+git config --global user.name "shweta-0696"
+git config --global user.email "shwetagote0696@gmail.com"
+git config --list
+
+**it allocates directory make files in it***
+git init
+gedit text1.c
+gedit text2.c
+git pull "link of repository" master
+gedit text1.c (some mdifications)
+git add text1.c
+git commit  -m "Modified file" 
+git push "link of repository"
+
+***branching***
+git branch
+git branch mybranch (branch_name)
+git checkout mybranch 
+git  commit
+
+gedit text3.c (modify something)
+git add text3.c
+git commit -m "modified text1.c"
+git push "link of repository" mybranch
+
+git merge "branch_name"
+
+
+
+
+
+
+
+
+
+
+
+
+

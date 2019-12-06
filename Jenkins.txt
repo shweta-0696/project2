@@ -1,0 +1,42 @@
+
+  sudo -i
+  apt-get update
+  install docker beforehand....
+
+1) wget -q -O- https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+2) echo deb http://pkg.jenkins.io/debian-stable binary/| sudo tee /etc/apt/sources.list.d/jenkins.list
+
+3) sudo apt-get update
+   install-- apt install openjdk-8-jre
+
+4) sudo apt-get install jenkins
+
+  if front-end lock error
+  rm /var/lib/dpkg/lock-frontend 
+   
+  if it gives is a directory
+  rmdir /var/lib/dpkg/lock-frontend 
+
+5) sudo systemctl start jenkins
+
+6) sudo systemctl status jenkins
+
+7) 
+  Java Error(Install packages)
+  ***apt-get install openjdk-9-jre(may be some error) do with apt install openjdk-8-jre 
+8) 
+  
+  sudo systemctl start jenkins
+  sudo systemctl status jenkins
+  **shows active status
+  then run in browser of local machine (http://ip_address or localhost:8080/)**
+
+9) 
+  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  ***Genertes Password
+
+
+10) apt-get install git
+
+

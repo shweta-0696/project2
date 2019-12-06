@@ -1,0 +1,30 @@
+1) Create File named Dockerfile
+
+2) mkdir DockerFiles
+   cd DockerFiles/
+   gedit Dockerfile
+   
+   #geting base image
+   From ubuntu (if no base image then From scratch)
+   Maintainer "shwetagote"
+   run apt-get update 
+   #run something on command line during container creation
+   cmd ["echo","hello...world"]
+  
+   #to see contents
+   cat Dockerfile
+    
+   #build image (-t flag for taaging images to give name to image)
+   docker build -t myimage1:1.0 .   
+   
+   #to run image with image1
+   docker run myimage1
+  
+   #to run using image id
+   docker run (image_id) 
+
+
+
+
+ 
+
